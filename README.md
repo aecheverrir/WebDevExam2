@@ -33,7 +33,7 @@
 
 ## Visit
 
-Currently deployed with heroku: <a href="http://webdevexam2.herokuapp.com/" target="_blank">**NatureCol**</a>
+Currently deployed with heroku: <a href="http://webdevexam2.herokuapp.com/" target="_blank">**WebDevExam2**</a>
 
 ---
 
