@@ -1,7 +1,5 @@
 # Exam 2 WebDev
-> WebApp that allows you to 
-
-(http://badges.mit-license.org) [![Badges](http://img.shields.io/:badges-9/9-ff6799.svg?style=flat-square)](https://github.com/badges/badgerbadgerbadger)
+> WebApp that allows you to
 
 
 ## Table of Contents
