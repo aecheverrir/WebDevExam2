@@ -7,7 +7,7 @@ import { Comments } from '../../api/comments.js';
 import { ReactDOM } from 'react-dom';
 
 import AccountsUI from '../components/AccountsUI.jsx';
-import Example  from '../components/Example.jsx';
+import NavBar from '../components/NavBar.jsx';
 
 class Home extends Component {
 	constructor(props) {
@@ -69,13 +69,42 @@ class Home extends Component {
 
 	}
 
+	buscar(){
+		const agencia = this.refs.agenciaIn.value;
+		const ruta = this.refs.rutaIn.value;
+
+		this.setState({hasLoaded: 1})
+
+		fetch("https://gist.githubusercontent.com/john-guerra/6a1716d792a20b029392501a5448479b/raw/e0cf741c90a756adeec848f245ec539e0d0cd629/sfNSchedule")
+			.then((res => {
+				return res.json()
+			})).then((json) => {
+				if (this.state.hasLoaded == 1){
+					this.setState({
+						data : json.route[0],
+						hasLoaded : 0
+					});	
+					// Visualizacion	
+					linechart(this.state.data)		
+				}
+				else{
+					// Visualizacion
+					linechart(this.state.data)
+				}
+			});
+
+
+	}
+
 	render() {
 		return(
-			<div>
-				
-				<nav>
-					<AccountsUI />
-				</nav> 
+			<div>	
+				<NavBar /> 
+				<div>
+					<input type="text" ref="agenciaIn" placeholder="Agencia"/>
+					<input type="text" ref="rutaIn" placeholder="Ruta"/>
+					<button onClick={this.buscar.bind(this)}>Buscar</button>
+				</div>
 				<div id="chart"></div>
 				<ul>
 					{this.renderComments()}

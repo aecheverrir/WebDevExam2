@@ -1,6 +1,12 @@
 # Exam 2 WebDev
-> WebApp that allows you to
+> WebApp that allows you to visualize bus schedules
 
+
+## Bugs de John
+
+- change `const maxDate = new Date(minDate.getTime() + 22*60*60*1000); // minDate + 24 hours` to `const maxDate = new Date(minDate.getTime() + 24*60*60*1000); // minDate + 24 hours` 22 -> 24 hours
+
+- change `const minDate = d3.min(buses[1], d => d.date);` to `const minDate = d3.min(buses[1], d => d.date);` buses[1] -> buses[0]
 
 ## Table of Contents
 

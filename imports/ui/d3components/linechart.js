@@ -22,8 +22,8 @@ export function linechart(dataRoutes) {
         .attr("width", width);      
             
     const margin = ({top: 20, right: 30, bottom: 30, left: 150});
-    const minDate = d3.min(buses[1], d => d.date);
-    const maxDate = new Date(minDate.getTime() + 22*60*60*1000); // minDate + 24 hours
+    const minDate = d3.min(buses[0], d => d.date);
+    const maxDate = new Date(minDate.getTime() + 24*60*60*1000); // minDate + 24 hours
     const x = d3.scaleTime()
         .domain([ minDate, maxDate ])
         .range([margin.left, width - margin.right]);
@@ -61,43 +61,6 @@ export function linechart(dataRoutes) {
         .attr("stroke-linecap", "round")
         .attr("d", line);
     return svg.node();  
-
-  
-/*    
-    var myData = [1, 2, 3, 4, 5], 
-    margin = {top:10, bottom: 10, left:10, right:10}, 
-    width = 300, 
-    height= 200, 
-    barHeight = 20;
-
-var chart = d3.select("#chart")
-    .attr("width", width)
-    .attr("height", height)
-
-var sel = chart.selectAll("rect")
-    .data(myData);
-
-//UPDATE
-
-
-//NEW ITEMS
-sel.enter()
-    .append("rect")
-    .style("fill", "darkblue")
-    .attr("x", 0)
-    .attr("y", 0)
-    .attr("height", barHeight)
-    .attr("width", function (d){
-        return d;
-    });
-
-//REMOVE
-sel.exit()
-    .remove();
-
- 
-*/
-
 
 }
    
