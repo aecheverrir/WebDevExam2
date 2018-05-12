@@ -21,7 +21,7 @@ class Home extends Component {
 	componentDidMount(){
 
 		// Fetch
-		fetch("https://gist.githubusercontent.com/john-guerra/6a1716d792a20b029392501a5448479b/raw/e0cf741c90a756adeec848f245ec539e0d0cd629/sfNSchedule")
+		fetch("http://webservices.nextbus.com/service/publicJSONFeed?command=schedule&a=sf-muni&r=N")
 			.then((res => {
 				return res.json()
 			})).then((json) => {
@@ -75,7 +75,9 @@ class Home extends Component {
 
 		this.setState({hasLoaded: 1})
 
-		fetch("https://gist.githubusercontent.com/john-guerra/6a1716d792a20b029392501a5448479b/raw/e0cf741c90a756adeec848f245ec539e0d0cd629/sfNSchedule")
+		let urlfetch = "http://webservices.nextbus.com/service/publicJSONFeed?command=schedule&a=" + agencia + "&r=" + ruta ;
+
+		fetch(urlfetch)
 			.then((res => {
 				return res.json()
 			})).then((json) => {
@@ -105,7 +107,7 @@ class Home extends Component {
 					<input type="text" ref="rutaIn" placeholder="Ruta"/>
 					<button onClick={this.buscar.bind(this)}>Buscar</button>
 				</div>
-				<div id="chart"></div>
+				<div id="graph"></div>
 				<ul>
 					{this.renderComments()}
 				</ul>

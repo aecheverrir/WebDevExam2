@@ -16,13 +16,15 @@ export function linechart(dataRoutes) {
     const height = 600;
     const width = 1200;
 
-    var svg = d3.select("#chart")
+    var svg = d3.select("#graph")
         .append("svg")
         .attr("height", height)
-        .attr("width", width);      
+        .attr("width", width);   
+    
+    console.log(buses)
             
     const margin = ({top: 20, right: 30, bottom: 30, left: 150});
-    const minDate = d3.min(buses[0], d => d.date);
+    const minDate = d3.min(buses[1], d => d.date);
     const maxDate = new Date(minDate.getTime() + 24*60*60*1000); // minDate + 24 hours
     const x = d3.scaleTime()
         .domain([ minDate, maxDate ])
