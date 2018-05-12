@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button } from "reactstrap";
 import { Meteor } from "meteor/meteor";
-import Home from "../pages/Home.jsx";
 import { withRouter  } from "react-router-dom";
 import { withTracker  } from "meteor/react-meteor-data";
+import {AccountsUI} from './AccountsUI.jsx';
 
 export default class App extends Component {
 	constructor(props) {
@@ -19,6 +19,9 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
+				<nav>
+					<AccountsUI />
+				</nav> 
 				{this.props.children}
 			</div>
 		);

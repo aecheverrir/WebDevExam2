@@ -3,6 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { render } from 'react-dom';
 import { renderRoutes } from "../imports/startup/client/routes.jsx";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import '../imports/startup/client/accounts-config.js';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 Meteor.startup(() => {
