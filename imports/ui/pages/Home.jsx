@@ -12,7 +12,7 @@ export default class Home extends Component {
 
 	componentDidMount(){
 
-		//Fetch
+		// Fetch
 		fetch("https://gist.githubusercontent.com/john-guerra/6a1716d792a20b029392501a5448479b/raw/e0cf741c90a756adeec848f245ec539e0d0cd629/sfNSchedule")
 			.then((res => {
 				return res.json()
@@ -21,23 +21,22 @@ export default class Home extends Component {
 					this.setState({
 						data : json.route[0],
 						hasLoaded : 0
-					});				
+					});	
+					// Visualizacion	
+					linechart(this.state.data)		
 				}
-				console.log(this.state.data);
-			});
+				else{
+					// Visualizacion
+					linechart(this.state.data)
+				}
+			});						
 
-		//Visualizacion
-
-
-
-				
 	};
 
 	render() {
 		return(
 			<div> 
-				<svg id="chart">
-				</svg>
+				<div id="chart"></div>
 			</div>
 		);
 	}
