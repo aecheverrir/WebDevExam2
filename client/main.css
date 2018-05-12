@@ -54,7 +54,11 @@ body {
 	margin-top: 10px;
 	margin-bottom: -10px;
 	position: relative;
-  }
+	}
+	
+	p {
+		color: grey; 
+	}
    
   .new-task input {
 	box-sizing: border-box;

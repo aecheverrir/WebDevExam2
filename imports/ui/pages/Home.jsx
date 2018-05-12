@@ -106,6 +106,7 @@ class Home extends Component {
 					<input type="text" ref="agenciaIn" placeholder="Agencia"/>
 					<input type="text" ref="rutaIn" placeholder="Ruta"/>
 					<button onClick={this.buscar.bind(this)}>Buscar</button>
+					<p>  ejemplo: Agencia: "sf-muni"  y Ruta: "N" </p> 
 				</div>
 				<div id="graph"></div>
 				<ul>
