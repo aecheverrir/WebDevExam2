@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { linechart } from "../d3components/linechart.js";
-import {AccountsUI} from '../components/AccountsUI.jsx';
 import { Comment } from '../components/Comment';
 import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter } from 'react-router-dom'
 import { Comments } from '../../api/comments.js';
-import {ReactDOM} from 'react-dom';
+import { ReactDOM } from 'react-dom';
+
+import AccountsUI from '../components/AccountsUI.jsx';
+import Example  from '../components/Example.jsx';
 
 class Home extends Component {
 	constructor(props) {
@@ -70,8 +72,9 @@ class Home extends Component {
 	render() {
 		return(
 			<div>
+				
 				<nav>
-					
+					<AccountsUI />
 				</nav> 
 				<div id="chart"></div>
 				<ul>

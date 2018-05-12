@@ -9,6 +9,10 @@ export default class AccountsUI extends Component {
     this.view = Blaze.render(Template.loginButtons,
       ReactDOM.findDOMNode(this.refs.container));
   }
+
+  componentWillUnmount() {
+    Blaze.remove(this.view);
+  }
   
   render() {
     // Just render a placeholder container that will be filled in
